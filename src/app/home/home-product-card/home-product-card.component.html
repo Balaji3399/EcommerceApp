@@ -1,0 +1,14 @@
+<div class="card border mx-2 p-2 hover:scale-110 flex flex-col overflow-hidden transition-all duration-500 items-center w-[15rem]">
+    <div class="p-5">
+        <div class="h-[13rem] w-[10rem]">
+            <a [routerLink]="">
+                <img [src]="product.imageUrl" alt="" class="h-[13rem]">
+            </a>
+        </div>
+        <div class="details p-2 m-2 ">
+            <h3 class="font-medium">{{ product.title }}</h3>
+            <h1 class="p-2 font-bold text-[red]"> {{ product.price }}</h1>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,9 @@
+<div class="p-5 py-10 lg:px-10">
+    <h3 class="font-semibold mb-4 pl-20 text-[20px]"> {{ title }} <span class="float-right pr-24 text-[green]"><button>View All</button></span>
+    </h3>
+    <div class="flex flex-wrap justify-center">
+        <div class="" *ngFor="let item of products ;">
+            <app-home-product-card [product]="item"></app-home-product-card>
+        </div>
+    </div>
+</div>
