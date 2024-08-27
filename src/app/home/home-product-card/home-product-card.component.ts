@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input , ViewEncapsulation} from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -6,7 +6,9 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [RouterModule],
   templateUrl: './home-product-card.component.html',
-  styleUrl: './home-product-card.component.css'
+  styleUrl: './home-product-card.component.css',
+  encapsulation: ViewEncapsulation.Emulated
+
 })
 export class HomeProductCardComponent {
   @Input() product:any ;

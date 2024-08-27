@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , ViewEncapsulation } from '@angular/core';
 import { HomeCarouselComponent } from './home-carousel/home-carousel.component';
 import { ProductSliderComponent } from './product-slider/product-slider.component';
 import { jeans } from '../data/Men/men_jeans';
@@ -11,7 +11,8 @@ import { shoes } from '../data/shoes';
   standalone: true,
   imports: [HomeCarouselComponent , ProductSliderComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class HomeComponent {
   menJeans:any ;
