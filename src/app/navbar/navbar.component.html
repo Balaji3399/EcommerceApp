@@ -1,8 +1,45 @@
-<div class="navbar fixed top-0 left-0 right-0 z-10  bg-[#004f4f]">
+<div class="navbar fixed top-0 left-0 right-0 z-10 bg-[#004f4f] lg:px-24 px-5">
     <div class="content flex items-center justify-between h-16">
-        <div>
-            <img class="w-10" src="https://graphicsfamily.com/wp-content/uploads/edd/2021/08/E-Commerce-Logo-Design-scaled.jpg"
-             alt="logo">
+      <div class="flex items-center">
+        <div class="mr-2">
+          <img class="w-10" src="https://graphicsfamily.com/wp-content/uploads/edd/2021/08/E-Commerce-Logo-Design-scaled.jpg" alt="logo">
         </div>
-    </div>
-</div>
+        <div>
+          <div class="flex space-x-5">
+            <a [routerLink]="">Ecommerce</a>
+            <div>
+              <button class="open-button" (click)="openNavbarContent('men')">Men</button>
+            </div>
+            <div>
+              <button class="open-button" (click)="openNavbarContent('women')">Women</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="flex items-center space-x-5">
+        <button>
+          <mat-icon fontIcon="shopping_cart"></mat-icon>
+        </button>
+        <button mat-raised-button *ngIf="false">Login</button>
+        <div class="flex items-center" *ngIf="true">
+          <div class="flex">
+            <span class="font-bold text-lg">Name</span>
+          </div>
+          <button mat-button [matMenuTriggerFor]="profileMenu">
+            <img class="w-8 h-8" src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_640.png" alt="">
+          </button>
+          <mat-menu #profileMenu="matMenu">
+            <button mat-menu-item>Profile</button>
+            <button mat-menu-item>Orders</button>
+            <button mat-menu-item color="red">LogOut</button>
+          </mat-menu>
+        </div>
+      </div>
+    </div>   
+  </div>
+  
+  <div class="modal-container" *ngIf="isnavOpen">
+    <app-navbar-content [selectedContent]="currentSection"></app-navbar-content>
+  </div>
+  

@@ -1,1 +1,26 @@
-<p>navbar-content works!</p>
+<div *ngIf="selectedCategory; else noContent">
+    <div class="w-full mt-16">
+      <div class="w-full h-1/2 shadow-lg p-6 ">
+        <div class="flex justify-around">
+
+          <div *ngFor="let item of selectedCategory.sections" class="flex flex-col">
+            <h1 class="text-center text-[black] font-bold">{{ item.name }}</h1>
+  
+            <ul class="justify-center">
+              <li *ngFor="let item of item.items" class="">
+                <button mat-button [routerLink]="item.href" class="justify-center m-2 hover:bg-[grey]">{{ item.name }}</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Fallback message if no valid category is selected -->
+  <ng-template #noContent>
+    <div class="text-center mt-16">
+      <p>No content available. Please select a valid category.</p>
+    </div>
+  </ng-template>
+  
