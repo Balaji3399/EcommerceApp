@@ -1,13 +1,13 @@
 import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { homeCarousal } from '../../data/homeCarousal';
+import { homeCarousal } from '../../../../../data/homeCarousal';
 import { RouterModule } from '@angular/router';
 import { ProductSliderComponent } from '../product-slider/product-slider.component';
 
 @Component({
   selector: 'app-home-carousel',
   standalone: true,
-  imports: [RouterModule , CommonModule ],
+  imports: [RouterModule , CommonModule , ProductSliderComponent ],
   templateUrl: './home-carousel.component.html',
   styleUrl: './home-carousel.component.css'
 })
