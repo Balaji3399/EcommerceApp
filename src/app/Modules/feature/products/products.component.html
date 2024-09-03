@@ -1,7 +1,7 @@
-<div class="px-5 lg:px-16 h-[100vh]">
-    <div class="max-w-7xl px-4 sm:px-6 lg:px-8 pb-10">
+<div class="px-5 lg:px-16">
+    <div class="max-w-7xl px-4 sm:px-6 lg:px-8 pb-2">
         <div class="flex justify-between pb-6 pt-24">
-            <h1 class="text-3xl font-bold">Products</h1>
+            <h1 class="text-3xl font-bold font-mono">Products</h1>
 
             <div class="flex items-center">
                 <div>
@@ -17,4 +17,66 @@
             </div>
         </div>
     </div>
+    <mat-divider></mat-divider>
+
+    <section class="my-8">
+        <div class="grid grid-cols-1 gap-10 gap-y-10 lg:grid-cols-4">
+            <div>
+                <div class="flex items-center justify-between">
+                    <p class="font-serif font-semibold">Filters</p>
+                    <mat-icon>filter_list</mat-icon>
+                </div>
+                <form action="" class="hidden lg:block">
+                    <div class="filters" *ngFor="let item of filterdata let last=last">
+                        <div class="border-b py-5">
+                            <span class="font-medium"> {{ item.name }} </span>
+                        </div>
+
+                        <div class="pt-6 scroll-py-4" id="filter-section-0">
+                            <div class="" *ngFor="let option of item.options">
+                                <div class="flex items-center">
+                                    <mat-checkbox 
+                                        id="filter - '+ option.value" 
+                                        [name]="option.name"
+                                        [value]="option.value"
+                                        (click)="handleMultipeSelection(option.value , item.id)"
+                                    >
+                                    <span class="text-sm"> {{ option.label }} </span>
+                                    </mat-checkbox> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <div class="filters" *ngFor="let item of singleFilterData let last=last">
+                        <div class="border-b py-5">
+                            <span class="font-medium"> {{ item.name }} </span>
+                        </div>
+
+                        <div class="pt-6 scroll-py-4" id="filter-section-0">
+                            <div class="" *ngFor="let option of item.options">
+                                <div class="flex items-center">
+                                    <mat-radio-button
+                                        id="filter - '+ option.value" 
+                                        [name]="item.name"
+                                        [value]="option.value"
+                                        (click)="handleSingleSelection(option.value , item.id)"
+                                    >
+                                    <span class="text-sm"> {{ option.label }} </span>
+                                    </mat-radio-button> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+                <div class="lg:col-span-3">
+                    <div class="flex flex-wrap justify-evenly">
+                        <ng-container *ngFor="let item of menPants">
+                            <app-product-card [product]="item"></app-product-card>
+                        </ng-container>
+                    </div>
+                </div>
+        </div>
+    </section>
 </div>

@@ -1,0 +1,21 @@
+<div class="productCard w-[17rem] transition-all cursor-pointer m-3">
+
+    <div class="h-[20rem]">
+        <img class="h-full w-full" [src]="product.imageUrl" alt="">
+    </div>
+
+    <div class="textPart p-5">
+        <div class="">
+            <p> {{ product.brand }} </p>
+            <p> {{ product.title }} </p>
+            <p class="font-medium"> {{ product.color }} </p>
+        </div>
+
+        <div class="flex flex-wrap items-center space-x-2">
+            <p class="font-semibold">₹ {{product.discountedPrice}}</p>
+            <p class="line-through">{{product.price}}</p>
+            <p class="text-green-600 font-semibold">{{product.disscount }}%</p>
+        </div>
+    </div>
+
+</div>
